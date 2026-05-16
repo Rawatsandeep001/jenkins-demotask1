@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'dev'   // 👈 your second node label
+        label 'dev'
     }
 
     tools {
@@ -72,7 +72,7 @@ pipeline {
 
     post {
         always {
-            echo "Pipeline completed on node2 for ENV: ${params.ENV}"
+            echo "Pipeline completed on dev node for ENV: ${params.ENV}"
             cleanWs()
         }
     }
