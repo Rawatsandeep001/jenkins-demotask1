@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'node2'   // 👈 your second node label
+        label 'dev'   // 👈 your second node label
     }
 
     tools {
