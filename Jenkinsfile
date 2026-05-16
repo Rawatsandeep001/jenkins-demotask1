@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'node2'   // 👈 your second node label
+    }
 
     tools {
         jdk 'jdk8'
@@ -70,7 +72,7 @@ pipeline {
 
     post {
         always {
-            echo "Pipeline completed for ENV: ${params.ENV}"
+            echo "Pipeline completed on node2 for ENV: ${params.ENV}"
             cleanWs()
         }
     }
